@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키오스크</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+    "></script>
+
+    <div class="kiosk_simulation">
+        <div class="kiosk_background">
+
+            <div class="kiosk_screen">
+
+
+                <div id="start_img">
+                    <button id="start_btn" onclick="start_btn()"></button>
+                </div>
+
+                <div id="order_bar">
+                    <div id="top_bar">
+                        <div id="top_bar_home" onclick="herf_home()">홈</div>
+                        <div id="top_bar_name">위덕 Cafe</div>
+                        <div class="top_bar_help" onclick="show_help()">도움말</div>
+                    </div>
+                    
+                    <div class="help">
+                        <div class="help_body">
+                            <br>
+                            <h1>키오스크 사용법</h1>
+                            <p>
+                                <br>
+                                <h3>1. 메뉴 선택 </h3>
+                                메뉴 선택하면 장바구니에 상품이 담깁니다. <br>
+                                필요할 때마다 장바구니를 눌러 담은 메뉴를 확인할 수 있습니다. <br>
+                                장바구니는 + 버튼, - 버튼, X버튼을 눌러 수정할 수 있습니다. <br>
+                                장바구니에서 결제버튼을 누르면 다음 과정으로 넘어갑니다. <br>
+                                <br>
+                                <h3>2. 내역 확인 </h3>
+                                결제 전, 장바구니에 담긴 메뉴를 확인할 수 있습니다. <br>
+                                이 창에서는 상품을 추가할 수 없습니다. <br>
+                                <br>
+                                <h3>3. 포인트 적립 </h3>
+                                포인트를 적립하여 할인을 받을 수 있습니다. <br>
+                                <br>
+                                <h3>4. 결제</h3> 
+                                카드 및 다양한 결제방법을 활용하여 상품을 결제합니다. <br>
+                                <br>
+                            </p>
+                            <div class="help_close" onclick="close_help()">주문하러 가기</div>
+                        </div>
+                    </div>
+
+                    <div id="step_bar">
+                        <div id="step_bar_choice">메뉴 선택</div>
+                        <div id="step_bar_check">내역 확인</div>
+                        <div id="step_bar_point">포인트 적립</div>
+                        <div id="step_bar_pay">결제</div>
+                    </div>
+
+                    <div id="menu_bar">
+                        <div id="menu_bar_left" onclick="turn_menu_page(this.id)">&#60;</div>
+
+                        <div class="menu_1" title="인기메뉴" onclick="open_menu_table(this.title)">인기 메뉴</div>
+                        <div class="menu_1" title="커피" onclick="open_menu_table(this.title)">커피</div>
+                        <div class="menu_1" title="논커피" onclick="open_menu_table(this.title)">논커피</div>
+
+                        <div class="menu_2" title="에이드" onclick="open_menu_table(this.title)">디저트</div>
+                        <div class="menu_2" title="차" onclick="open_menu_table(this.title)">MD상품</div>
+                        <div class="menu_2" title=""></div>
+                        
+                        <div id="menu_bar_right" onclick="turn_menu_page(this.id)">></div>
+                        
+                    </div>
+                </div>
+
+                <div id="menu_table">
+
+                    <div id="인기메뉴" class="menu_table p1">
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                    <div id="인기메뉴_p2" class="menu_table p2">
+                        <div id="row">
+                            <div id="ice_흑당버블그린티라떼" title="no_option" data-price="3800"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_흑당버블밀크티라떼" title="no_option" data-price="3800"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_흑당라떼" title="no_option" data-price="3000"
+                                onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                    <div id="커피" class="menu_table">
+                        <div id="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_헤이즐넛아메리카노" title="coffee" data-price="2500"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_바닐라아메리카노" title="coffee" data-price="2500"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_토피넛마끼아또" title="coffee" data-price="3900"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                        </div>
+                    </div>
+
+                    <div id="논커피" class="menu_table">
+                        <div id="row">
+                            <div id="ice_레몬차" title="non_coffee" data-price="3000"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_사과유자차" title="non_coffee" data-price="3500"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div id="ice_허니자몽블랙티" title="non_coffee" data-price="3500"
+                            onclick="option(this.id, this.title, this.dataset.price)"></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="nextpage">
+                    <div id="first_page" class="prev_page" >이전</div>
+                    <div id="pagenum">/</div>
+                    <div id="second_page" class="next_page" >다음</div>
+                </div>
+                <div id="pay">
+                    <!--장바구니 버튼 및 리스트 작성-->
+                    <div id="cart_btn" class="btn js-click-modal">장바구니</div>
+                    
+                    <div id="cart_modal">
+                        <div id="pay_background"><!--뒷배경-->
+                        
+                            <div id="modal_body">
+                                    <div id="order_list">
+                                        <div id="order_1" class="cart">
+                                            <div id="delete_1">X</div>
+                                            <div id="range_1"></div>
+                                            <div id="minus_1">ㅡ</div>
+                                            <div id="amount_1"></div>
+                                            <div id="plus_1">╋</div>
+                                            <div id="item_price_1"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+    
+                                <!--상품 개수, 금액 정하기-->
+                                <div id="item_number">선택한 상품</div>
+                                <div id="total_price">0원</div>
+                                <a class ="btn js-close-modal">Close</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+                
+                <div id="window_pay"></div>
+                <div id="w_point"></div>
+                <div id="w_card_pay"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

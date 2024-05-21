@@ -1,0 +1,38 @@
+/*인기메뉴 부분*/
+#ice_아메리카노 {
+    background: url(img/order_아메리카노.jpg) no-repeat center / cover;
+}
+#ice_흑당버블그린티라떼 {
+    background: url(img/mega_\(ICE\)흑당버블그린티라떼.jpg) no-repeat center / cover;
+}
+#ice_흑당버블밀크티라떼 {
+    background: url(img/mega_\(ICE\)흑당버블밀크티라떼.jpg) no-repeat center / cover;
+}
+#ice_흑당라떼 {
+    background: url(img/mega_\(ICE\)흑당라떼.jpg) no-repeat center / cover;
+}
+
+/*커피 부분*/
+#ice_아메리카노 {
+    background: url(img/order_아메리카노.jpg) no-repeat center / cover;
+}
+#ice_헤이즐넛아메리카노 {
+    background: url(img/mega_\(ICE\)헤이즐넛아메리카노.jpg) no-repeat center / cover;
+}
+#ice_바닐라아메리카노 {
+    background: url(img/mega_\(ICE\)바닐라아메리카노.jpg) no-repeat center / cover;
+}
+#ice_토피넛마끼아또 {
+    background: url(img/mega_\(ICE\)토피넛마끼아또.jpg) no-repeat center / cover;
+}
+
+/*논커피 부분*/
+#ice_레몬차 {
+    background: url(img/mega_\(ICE\)레몬차.jpg) no-repeat center / cover;
+}
+#ice_사과유자차 {
+    background: url(img/mega_\(ICE\)사과유자차.jpg) no-repeat center / cover;
+}
+#ice_허니자몽블랙티 {
+    background: url(img/mega_\(ICE\)허니자몽블랙티.jpg) no-repeat center / cover;
+}
