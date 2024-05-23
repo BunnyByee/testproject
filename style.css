@@ -190,7 +190,7 @@ body{
 /*페이지 넘기는 것*/
 #nextpage{
     width: 100%;
-    height: 5%;
+    height: 4%;
     background: #5260AB;
     display: flex;
     justify-content: center;
@@ -225,6 +225,7 @@ body{
     left: 52%;
 }
 
+/* 장바구니 */
 
 #pay{
     display: none;
@@ -248,10 +249,79 @@ body{
 }
 
 #cart_modal{
+    position: absolute;
     display: none;
+
+    justify-content: center;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/*스크린 아래*/
+#modal_body{
+    position: absolute;
+
+    top: 58%;
+
+    width: 100%;
+    height: 85%;  
+
+    text-align: center;
+
+    background: white;
+    border-radius: 10px;
+
+    transform: translateY(-50%);
+}
+
+#modal_body > h1 {
+    width: 30%;
+    font-size: 30px;
+    background-color: #0f3192;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+#cart_close{
+    width: 4%;
+    position: relative;
+    top: -38px; 
+    left: 200px;
+    padding: 3px;
+
+    background: white;
+    font-weight: bold;
+    
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#order_list{
+    position: relative;
+    top: -30px;
+
+    width: 90%;
+    height: 100%;
+
+    background: #D2DCFA;
+    font-size: 15px;
+    flex-direction: column;
+}
+#order_list div {
+    height: 15%;
+    justify-content: space-between;
+    flex-direction: row;
+    display: inline;
+    align-items: center;
+}
+#order_list div div {
+    height: 65%;
+    text-align: center;
+}
 
 /*결제창 배경*/
 
@@ -260,6 +330,8 @@ body{
 /*적립포인트*/
 
 /*카드결제화면*/
+
+
 
 
 
