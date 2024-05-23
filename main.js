@@ -221,3 +221,15 @@ function updatePage() {
         currentPageElement.style.display = "block";
     }
 }
+
+function show_cart() {
+    const cmodal = document.querySelector('#cart_modal');
+    cmodal.style.display="flex";
+
+}
+
+function close_cart() {
+    const cmodal = document.querySelector('#cart_modal');
+    cmodal.style.display="none";
+
+}
