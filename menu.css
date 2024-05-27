@@ -1,38 +1,67 @@
-/*인기메뉴 부분*/
-#ice_아메리카노 {
-    background: url(img/order_아메리카노.jpg) no-repeat center / cover;
-}
-#ice_흑당버블그린티라떼 {
-    background: url(img/mega_\(ICE\)흑당버블그린티라떼.jpg) no-repeat center / cover;
-}
-#ice_흑당버블밀크티라떼 {
-    background: url(img/mega_\(ICE\)흑당버블밀크티라떼.jpg) no-repeat center / cover;
-}
-#ice_흑당라떼 {
-    background: url(img/mega_\(ICE\)흑당라떼.jpg) no-repeat center / cover;
-}
-
 /*커피 부분*/
-#ice_아메리카노 {
+#아메리카노 {
     background: url(img/order_아메리카노.jpg) no-repeat center / cover;
 }
-#ice_헤이즐넛아메리카노 {
-    background: url(img/mega_\(ICE\)헤이즐넛아메리카노.jpg) no-repeat center / cover;
+#달달커피 {
+    background: url(img/order_달달커피.jpg) no-repeat center / cover;
 }
-#ice_바닐라아메리카노 {
-    background: url(img/mega_\(ICE\)바닐라아메리카노.jpg) no-repeat center / cover;
+#바닐라라떼 {
+    background: url(img/order_바닐라라떼.jpg) no-repeat center / cover;
 }
-#ice_토피넛마끼아또 {
-    background: url(img/mega_\(ICE\)토피넛마끼아또.jpg) no-repeat center / cover;
+#카페라떼 {
+    background: url(img/order_카페라떼.jpg) no-repeat center / cover;
+}
+#연유카페라떼 {
+    background: url(img/order_연유카페라떼.jpg) no-repeat center / cover;
+}
+#카페모카 {
+    background: url(img/order_카페모카.jpg) no-repeat center / cover;
+}
+#카푸치노 {
+    background: url(img/order_카푸치노.jpg) no-repeat center / cover;
+}
+#카라멜마끼아또 {
+    background: url(img/order_카라멜마끼아또.jpg) no-repeat center / cover;
 }
 
 /*논커피 부분*/
-#ice_레몬차 {
-    background: url(img/mega_\(ICE\)레몬차.jpg) no-repeat center / cover;
+#골드키위주스 {
+    background: url(img/order_골드키위주스.jpg) no-repeat center / cover;
 }
-#ice_사과유자차 {
-    background: url(img/mega_\(ICE\)사과유자차.jpg) no-repeat center / cover;
+#녹차라떼 {
+    background: url(img/order_녹차라떼.jpg) no-repeat center / cover;
 }
-#ice_허니자몽블랙티 {
-    background: url(img/mega_\(ICE\)허니자몽블랙티.jpg) no-repeat center / cover;
+#딸기주스 {
+    background: url(img/order_딸기주스.jpg) no-repeat center / cover;
+}
+#생강차 {
+    background: url(img/order_생강차.jpg) no-repeat center / cover;
+}
+#생과일수박주스 {
+    background: url(img/order_생과일수박주스.jpg) no-repeat center / cover;
+}
+#생과일토마토주스 {
+    background: url(img/order_생과일토마토주스.jpg) no-repeat center / cover;
+}
+#쌍화차 {
+    background: url(img/order_쌍화차.jpg) no-repeat center / cover;
+}
+#초콜릿 {
+    background: url(img/order_초콜릿.jpg) no-repeat center / cover;
+}
+
+/*디저트 부분*/
+#소금빵 {
+    background: url(img/order_소금빵.jpg) no-repeat center / cover;
+}
+#소프트아이스크림 {
+    background: url(img/order_소프트아이스크림.jpg) no-repeat center / cover;
+}
+#쌍쌍츄로스 {
+    background: url(img/order_쌍쌍츄로스.jpg) no-repeat center / cover;
+}
+
+/* MD 상품 부분*/
+#점보그립텀블러 {
+    background: url(img/order_점보그립텀블러.jpg) no-repeat center / cover;
 }
