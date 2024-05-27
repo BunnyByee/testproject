@@ -6,7 +6,7 @@ function start_btn() {
     document.getElementById("nextpage").style.display = 'flex';
     document.getElementById("pay").style.display = 'flex';
     hide_order_list();
-
+    open_menu_table("인기메뉴");
 }
 
 function hide_order_list() {
@@ -34,8 +34,6 @@ function close_help() {
 }
 
 
-
-
 // 메뉴 테이블
 var menu_list = ["인기메뉴"];
 function open_menu_table(title) {
@@ -49,10 +47,11 @@ function open_menu_table(title) {
 }
 
 function all_menu_none() {
-    var menuTables = document.querySelectorAll("#menu_table > div");
-    menuTables.forEach(function(table) {
-        table.style.display = 'none';
-    });
+    document.getElementById("인기메뉴").style.display = 'none';
+    document.getElementById("커피").style.display = 'none';
+    document.getElementById("논커피").style.display = 'none';
+    document.getElementById("디저트").style.display = 'none';
+    document.getElementById("MD상품").style.display = 'none';
 }
 
 var menu_bar_page = 1;
@@ -113,10 +112,11 @@ function turn_menu_page(btn) {
 function Item(name, price) {
     this.name = name;
     this.number = 0;
-    this.price = parseInt(price)
+    this.price = parseInt(price);
 }
 
 var order_list = [];
+
 function option(id, type, price) {
     var drink = document.getElementById(id);
     drink.style.borderStyle = 'solid';
@@ -126,7 +126,7 @@ function option(id, type, price) {
     order.number += 1;
 
     var cnt = 0;
-    for (i = 0; i < order_list.length; i++) {
+    for (var i = 0; i < order_list.length; i++) {
         if (order.name == order_list[i].name) {
             order_list[i].number += 1;
             cnt += 1;
@@ -135,7 +135,7 @@ function option(id, type, price) {
     if (cnt == 0 || order_list.length == 0) {
         order_list.push(order);
     }
-    
+
     open_order_list(order_list);
 
     if (type == "no_option") {
@@ -144,92 +144,97 @@ function option(id, type, price) {
 }
 
 function delete_item(index) {
-    order_list = order_list.splice(index, 1);
+    var deletedDrink = order_list[index].name;
+    order_list.splice(index, 1);
     open_order_list(order_list);
+
+    // 삭제된 드링크의 border 스타일 제거
+    var deletedDrinkElement = document.getElementById(deletedDrink);
+    if (deletedDrinkElement) {
+        deletedDrinkElement.style.borderStyle = 'none';
+    }
 }
 
 /*order_list에 표시하기*/
-var total_list= [0, 0];
+var total_list = [0, 0];
 function open_order_list(order_list) {
+    var orderListContainer = document.getElementById('order_list');
+    orderListContainer.innerHTML = ''; // Clear existing order items
+
     var total_num = 0;
     var total_price = 0;
 
-    for (i = 0; i < order_list.length; i++) {
-        var order_id = "order_" + (i + 1);
-        document.getElementById(order_id).style.display = 'flex';
+    order_list.forEach((order, i) => {
+        var orderElement = createOrderItemElement(order, i);
+        orderListContainer.appendChild(orderElement);
 
-        document.getElementById("range_" + (i + 1)).innerText = (i + 1) + ". " + (order_list[i].name);
-        document.getElementById("amount_" + (i + 1)).innerText = (order_list[i].number) + "개";
-        document.getElementById("item_price_" + (i + 1)).innerText = (order_list[i].price) * (order_list[i].number) + "원";
-        
-        total_num += order_list[i].number;
-        total_price += (order_list[i].price)*(order_list[i].number);
-    }
-    document.getElementById("item_number").innerHTML= "_________________________<br>선택한 상품 " + (total_num) + "개";
-    document.getElementById("total_price").innerHTML = (total_price)+"원<br>결제하기";
-    total_list[0] = total_num;
-    total_list[1] = total_price;
-
-}
-
-// 페이지 로드 시 초기 상태 설정
-document.addEventListener("DOMContentLoaded", function() {
-    // 모든 메뉴 테이블을 숨깁니다.
-    var allMenuTables = document.querySelectorAll(".menu_table");
-    allMenuTables.forEach(function(table) {
-        table.style.display = "none";
-    });
-    
-    // 첫 번째 페이지에 해당하는 메뉴 항목들을 보이게 설정
-    var firstPageItems = document.querySelectorAll(".menu_table.p1");
-    firstPageItems.forEach(function(item) {
-        item.style.display = "block";
+        total_num += order.number;
+        total_price += order.price * order.number;
     });
 
-    // 첫 번째 페이지로 설정
-    currentPage = 1;
-});
-
-// 다음 페이지로 이동하는 함수
-function goToNextPage() {
-    if (currentPage < totalPages) {
-        currentPage++;
-        updatePage();
-    }
+    document.getElementById("item_number").innerHTML = "선택한 상품 " + total_num + "개";
+    document.getElementById("total_price").innerHTML = total_price + "원";
 }
 
-// 이전 페이지로 이동하는 함수
-function goToPreviusPage() {
-    if (currentPage > 1) {
-        currentPage--;
-        updatePage();
-    }
-}
+function createOrderItemElement(order, index) {
+    var orderDiv = document.createElement('div');
+    orderDiv.className = 'cart';
 
-// 페이지 업데이트 함수
-function updatePage() {
-    // 모든 페이지를 숨깁니다.
-    var allPages = document.querySelectorAll(".menu_table");
-    allPages.forEach(function(page) {
-        page.style.display = "none";
-    });
+    var deleteDiv = document.createElement('div');
+    deleteDiv.innerText = 'X';
+    deleteDiv.onclick = function () {
+        delete_item(index);
+    };
+    deleteDiv.className ='delete'
 
-    // 현재 페이지를 보여줍니다.
-    var currentPageId = "인기메뉴_p" + currentPage;
-    var currentPageElement = document.getElementById(currentPageId);
-    if (currentPageElement) {
-        currentPageElement.style.display = "block";
-    }
+    var rangeDiv = document.createElement('div');
+    rangeDiv.innerText = `${index + 1}. ${order.name}`;
+
+    var minusDiv = document.createElement('div');
+    minusDiv.innerText = '-';
+    minusDiv.onclick = function () {
+        if (order.number > 1) {
+            order.number -= 1;
+            open_order_list(order_list);
+        }
+    };
+    minusDiv.className = 'minus';
+
+    var amountDiv = document.createElement('div');
+    amountDiv.innerText = `${order.number}개`;
+
+    var plusDiv = document.createElement('div');
+    plusDiv.innerText = '+';
+    plusDiv.onclick = function () {
+        order.number += 1;
+        open_order_list(order_list);
+    };
+    plusDiv.className ='plus'
+
+    var itemPriceDiv = document.createElement('div');
+    itemPriceDiv.innerText = `${order.price * order.number}원`;
+
+    orderDiv.appendChild(deleteDiv);
+    orderDiv.appendChild(rangeDiv);
+    orderDiv.appendChild(plusDiv);
+    orderDiv.appendChild(amountDiv);
+    orderDiv.appendChild(minusDiv);
+    orderDiv.appendChild(itemPriceDiv);
+    orderDiv.appendChild(document.createElement('br')); // 한 줄 엔터 추가
+    return orderDiv;
 }
 
 function show_cart() {
     const cmodal = document.querySelector('#cart_modal');
-    cmodal.style.display="flex";
-
+    cmodal.style.display = "flex";
 }
 
 function close_cart() {
     const cmodal = document.querySelector('#cart_modal');
-    cmodal.style.display="none";
+    cmodal.style.display = "none";
+}
 
+function 결제버튼(){
+    alert("키오스크 체험이 완료되었습니다. 참여해주셔서 감사합니다.")
+    location.href ="index.html"
 }
