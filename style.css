@@ -190,7 +190,7 @@ body{
 /*페이지 넘기는 것*/
 #nextpage{
     width: 100%;
-    height: 4%;
+    height: 5%;
     background: #5260AB;
     display: flex;
     justify-content: center;
@@ -305,22 +305,74 @@ body{
     top: -30px;
 
     width: 90%;
-    height: 100%;
+    height: 80%;
 
     background: #D2DCFA;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
     flex-direction: column;
 }
 #order_list div {
-    height: 15%;
-    justify-content: space-between;
+    height: 10%;
+
+    display: flex;
+    justify-content: center;
     flex-direction: row;
-    display: inline;
     align-items: center;
+    
 }
 #order_list div div {
     height: 65%;
     text-align: center;
+
+}
+
+[class ^= "delete"] {
+    width: 10%;
+    background: gray;
+    border-radius: 20%;
+    color: white;
+    font-weight: bolder;
+    
+}
+[class ^= "minus"] {
+    width: 10%;
+    background: orange;
+    border-radius: 20%;
+    color: white;
+    font-weight:bolder;
+}
+[class ^= "plus"] {
+    width: 10%;
+    background: orange;
+    border-radius: 20%;
+    color: white;
+    font-weight: bolder;
+}
+
+#order_bottom{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#total{
+    background-color: yellow;
+    border-radius: 8px;
+    width: 50%;
+    height: 60px;
+    float: left;
+    
+}
+
+#pay_btn{
+    background-color: red;
+    border-radius: 8px;
+    width: 50%;
+    height: 60px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*결제창 배경*/
@@ -330,10 +382,5 @@ body{
 /*적립포인트*/
 
 /*카드결제화면*/
-
-
-
-
-
 
 
